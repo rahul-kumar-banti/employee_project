@@ -1,0 +1,126 @@
+<div class="row">
+
+  <!-- <div class="col-md-3">
+
+  </div> -->
+  <div class="col-md-12 createForm">
+    <h3 class="bg-primary pull-center">{{formheading+" FORM"|uppercase }}</h3>
+    <div class="formcover">
+      <form [formGroup]="createEmployee" class="form " (submit)="employeeFormSubmit()" (input)="formdatachange()">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>name</label>
+              <input type="text" name="name" class="form-control" formControlName="name">
+              <div class="alert  alert-danger errormessage" *ngIf="createEmployee.controls.name.touched&&createEmployee.controls.name.errors">
+                <div *ngIf="createEmployee.controls.name.errors.required">name can't be empty</div>
+                <br>
+                <div *ngIf="createEmployee.controls.name.errors.pattern">name should only be alphbate</div>
+                <br>
+                <div *ngIf="createEmployee.controls.name.errors.minlength">name should no less then 5 character</div>
+
+              </div>
+
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>email</label>
+              <input type="email" name="email" class="form-control" formControlName="email">
+              <div class="alert  alert-danger errormessage " *ngIf="createEmployee.controls.email.touched&&createEmployee.controls.email.errors">
+                <div *ngIf="createEmployee.controls.email.errors.required">email can't be empty</div>
+                <div *ngIf="createEmployee.controls.email.errors.pattern">invalid email</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>mobile no</label>
+              <input type="number" name="phoneNumber" formControlName="phoneNumber" class="form-control" (change)="namechange()">
+              <div class="alert  alert-danger errormessage " *ngIf="createEmployee.controls.phoneNumber.touched&&createEmployee.controls.phoneNumber.errors">
+                <div *ngIf="createEmployee.controls.phoneNumber.errors.required">phone number can't be empty</div>
+                <div *ngIf="createEmployee.controls.phoneNumber.errors.min">number should not be less then 10 including country code</div>
+                <div *ngIf="createEmployee.controls.phoneNumber.errors.max">number should not be greater then 13 including country code</div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>contact Prefrence</label>
+              <select name="contactPrefrence" class="form-control" formControlName="contactPrefrence">
+                <option value="phone">phone</option>
+                <option value="email">email</option>
+              </select>
+              <div class="alert  alert-danger errormessage " *ngIf="createEmployee.controls.contactPrefrence.touched&&createEmployee.controls.contactPrefrence.errors">
+                <div *ngIf="createEmployee.controls.contactPrefrence.errors.required">chose home/office</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="form-group">
+          <label class="">gender</label> &nbsp;&nbsp;&nbsp;
+          <input type="radio" name="gender" value="male" class="radioButton" formControlName="gender">
+          <label>Male</label>
+          <input type="radio" name="gender" value="female" class="radioButton" formControlName="gender">
+          <label>female</label>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>date of birth</label>
+              <input type="date" name="dob" class="form-control" formControlName="dateOfBirth">
+              <div class="alert  alert-danger errormessage " *ngIf="createEmployee.controls.dateOfBirth.touched&&createEmployee.controls.dateOfBirth.errors">
+                <div *ngIf="createEmployee.controls.dateOfBirth.errors.required">please ender your date of birth</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>department</label>
+              <select appCustomValidator name="department" class="form-control" formControlName="daepartment">
+                <option [value]="0">select department</option>
+                <option *ngFor="let dep of department" [value]="dep.id">{{dep.name}}</option>
+              </select>
+              <div class="alert  alert-danger errormessage " *ngIf="createEmployee.controls.daepartment.touched&&createEmployee.controls.daepartment.errors">
+                <div *ngIf="createEmployee.controls.daepartment.errors.required">please enter your department</div>
+                <div *ngIf="createEmployee.controls.daepartment.errors.deparmentWrong">please select your department</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-8">
+            <div class="form-group">
+              <label for="photoPath">photo</label>
+              <input type="text" name="photoPath" formControlName="photoPath" class="form-control">
+              <button class="btn btn-success" type="button" (click)="changeImage()">{{imageShow?"hide":"show"}}</button>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" formControlName="inActive" class="form-control-inline" name="inActive">
+              <label for="inActive">inActive</label>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <img [src]="imgPath" class="img-thumbnail rounded-circle float-right" alt="no preview" *ngIf="imageShow">
+          </div>
+        </div>
+
+        <input type="submit" name="submit" [value]="formheading" [disabled]="createEmployee.invalid||SubmitOk" class="btn btn-block btn-success">
+        <div class="alert  alert-danger errormessage " *ngIf="exterror">
+          recheck your form some field are inavlid value or no value
+        </div>
+      </form>
+    </div>
+    <!-- <div class="col-md-3">
+
+    </div> -->
+  </div>
+</div>

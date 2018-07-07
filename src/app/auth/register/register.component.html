@@ -1,0 +1,114 @@
+<div class="container">    
+  <div class="row">
+    <div class="col-md-2">
+      
+    </div>
+    <div class="col-md-8">
+      <div class="signUp">
+        <div class="card">
+          <div class="card-header">
+          </div>
+          <div class="card-body">
+            <form [formGroup]="signUp" (ngSubmit)="SignUpSubmit()">
+              <div class="row" formGroupName="dispName">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="first_name">first Name<i class="fa fa-asterisk reqired-sign fa-lg" aria-hidden="true"></i></label>
+                    <div class="input-group">
+                      <div class="input-group-prepend"><i class="fa fa-user input-group-text" aria-hidden="true"></i></div>
+                      <input type="text" class="form-control" name="first_name" id="name" placeholder="first name" aria-label="true" formControlName="first_name">
+                    </div>
+                    <div class="alert alert-danger" *ngIf="signUp.get('dispName.first_name').touched&&signUp.get('dispName.first_name').errors?.required">first name is required</div>
+                    <div class="alert alert-danger" *ngIf="signUp.get('dispName.first_name').touched&&signUp.get('dispName.first_name').errors?.minlength">first name is not less  then three  character</div>
+                
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="last_name">last  name</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend"><i class="fa fa-user input-group-text" aria-hidden="true"></i></div>
+                      <input type="text" class="form-control" name="last_name"  placeholder="last  name" aria-label="true" formControlName="last_name">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="userName">user name<i class="fa fa-asterisk reqired-sign fa-lg" aria-hidden="true"></i></label>
+                    <div  class="input-group">
+                      <div class="input-group-prepend">
+                        <i class="fa fa-user-o input-group-text" aria-hidden="true"></i></div>
+                        <input type="text" class="form-control" name="userName"  placeholder="user name" aria-label="true" formControlName="userName">
+                    </div>
+                    <div class="alert alert-danger" *ngIf="signUp.get('userName').touched&&signUp.get('userName').errors?.required">user name is required</div>
+                    <div class="alert alert-danger" *ngIf="signUp.get('userName').touched&&signUp.get('userName').errors?.minlength">user name is not less then 6 character</div>
+                    
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="email">email<i class="fa fa-asterisk reqired-sign fa-lg" aria-hidden="true"></i></label>
+                    <div class="input-group">
+                      <span class="input-group-prepend"><i class="input-group-text" aria-hidden="true">@</i></span>
+                      <input type="text" name="email" placeholder="example@mail.com" id="email" class="form-control" formControlName="email"> 
+                    </div>
+                    <div class="alert alert-danger" *ngIf="signUp.get('email').touched&&signUp.get('email').errors?.required">
+                      email is  required
+                    </div>
+                    <div class="alert alert-danger" *ngIf="signUp.get('email').touched&&signUp.get('email').errors?.email">
+                      email is  invalid
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="password">Password<i class="fa fa-asterisk reqired-sign fa-lg" aria-hidden="true"></i></label>
+                        <div class="input-group">
+                          <span class="input-group-prepend"><i class="fa fa-lock input-group-text" aria-hidden="true"></i></span>
+                          <input type="password" name="password"  placeholder="password" id="password" class="form-control" formControlName="password">
+                        </div>
+                        <div class="alert alert-danger"*ngIf="signUp.get('password').touched&&signUp.get('password').errors?.required">password Field Cant't be  Empty</div>
+                        <div class="alert alert-danger" *ngIf="signUp.get('password').touched&&signUp.get('password').errors?.minlength">password Should  Not Less then 6 character</div>        
+                      </div>        
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="cnfpassword">conform Password<i class="fa fa-asterisk reqired-sign fa-lg" aria-hidden="true"></i></label>
+                        <div class="input-group">
+                          <span class="input-group-prepend"><i class="fa fa-lock input-group-text" aria-hidden="true"></i></span>
+                          <input type="password" name="cnfpassword"  placeholder=" conform password" id="cnfpassword" class="form-control" formControlName="confpassword">
+                        </div>
+                        <div class="alert alert-danger"*ngIf="signUp.get('confpassword').touched&&signUp.get('confpassword').errors?.required">conform password Field Cant't be  Empty</div>
+                        <div class="alert alert-danger" *ngIf="signUp.get('confpassword').touched&&signUp.get('confpassword').errors?.minlength">conform password Should  Not Less then 6 character</div>
+                        <div class="alert alert-danger" *ngIf="signUp.get('password').touched&&signUp.get('confpassword').touched&&signUp.get('confpassword').errors?.passwordNotMatch">password Not match</div>
+                        
+                      </div>
+                </div>
+              </div>
+              <div class="form-group form-check">
+                  <input type="checkbox" name="teram_condition" #termCondition (click)="formSubmit()" [checked]="false" class="form-check-input">
+                  <label for="teram_condition"  class="form-check-label"><a href="#">term & condition</a><i class="fa fa-asterisk reqired-sign fa-lg" aria-hidden="true"></i></label>
+                </div>
+                 <div class="form-group">
+                <input type="submit" value="SignUp"  [disabled]="signUp.invalid||!termCondition.checked" class="btn btn-primary btn-block">
+                <a class="btn btn-success btn-block"  routerLink="/login">Login</a>
+              </div>
+              
+            </form>
+          </div>
+          <div class="card-footer">
+            <!-- <div class="card-link"><a href="#">forgot password</a></div> -->
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div> 
+</div>

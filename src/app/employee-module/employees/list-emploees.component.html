@@ -1,0 +1,27 @@
+
+<app-model-content-projection [modelheading]="modelheading"   >
+    <div class="form-wrapper formcontent" >
+        <app-reac-form [class.fade]="modelviewfor!='edit'"></app-reac-form>
+        <app-employee-info  [class.fade]="modelviewfor!='view'" [empFotterStatus]="'hide'"></app-employee-info>
+
+</div>
+</app-model-content-projection>
+<!-- <app-model-content-projection>
+    <div class="form-wrapper formcontent">  
+        <app-employee-info></app-employee-info>
+</div>
+</app-model-content-projection>   -->
+
+  
+<div class="container">
+  <div>{{datafromchild}}</div>
+  <div class="searchinput">
+    <input type="search" class="form-control" placeholder="type text for  filter" [(ngModel)]="searchString">
+
+  </div>
+  <div id="#acoordian">
+  <div class="card card-primary toshowhide" *ngFor="let emp of finalEmployee">
+      <app-employee-single-list [emp]="emp" [searchString]="searchString"></app-employee-single-list>
+    </div>
+  
+</div>

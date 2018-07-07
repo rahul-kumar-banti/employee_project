@@ -1,0 +1,59 @@
+.diplabel
+{
+    display: block;
+    text-align: left;
+    
+}
+.userimage
+{
+    height:200px;
+}
+.card-body
+{
+    font-size: 20px;
+}
+.card-title
+{
+ cursor: pointer;
+    color: white;
+    padding-left: 10px;
+}
+.empDatashow{
+position: fixed;
+height: 100%;
+width:100%;
+background-color:rgba(0,0,0,0.4);
+opacity:1;
+z-index: 222;
+top:0px;
+}
+.empDatamain{
+margin-top:5%;
+margin-left: 5%;
+border: 4px inset blue;
+height: 70%;
+width:90%;
+background-color: white;
+z-index: 223;
+}
+.close
+{
+color:darkred;
+font-size: 30px;
+border: 2px inset blue;
+}
+.list-button
+{
+    float: left;
+    margin-left: 0px;
+    max-width: 100px;
+
+}
+.next-button
+{
+    float: right !important;
+
+    
+    margin-right: 0px;
+    max-width: 100px;
+}

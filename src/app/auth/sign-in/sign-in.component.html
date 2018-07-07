@@ -1,0 +1,63 @@
+<div class="container">    
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="login">
+        <div class="card">
+          <div class="card-header">
+            <div  class="card-login-icon bg-light">
+              <img src="../../assets/image/default.png" class="rounded-circle image-thumbnail">
+            </div>
+          </div>
+          <div class="card-body">
+              <form [formGroup]="login" (ngSubmit)="loginSubmit()">
+                  <div class="form-group has-success">
+                      <label for="password">email</label>
+                    <div class="input-group">
+                      <span class="input-group-prepend"><i class="fa fa-user input-group-text" aria-hidden="true"></i></span>
+                      <input type="text" name="email" [class.form-control-success]="login.get('email').touched" placeholder="example@mail.com" id="email" class="form-control" formControlName="email">
+                    
+                    
+                    </div>
+                    <div class="alert alert-danger" *ngIf="login.get('email').touched&&login.get('email').errors?.required">
+                        email is  required
+                      </div>
+                      <div class="alert alert-danger" *ngIf="login.get('email').touched&&login.get('email').errors?.email">
+                          email is  invalid
+                        </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="password" class="form-control-label">Password</label>
+                   <div class="input-group">
+                    <span class="input-group-prepend"><i class="fa fa-lock input-group-text" aria-hidden="true"></i></span>
+                    <input [type]="passwordInputType" name=""  placeholder="password" id="password" class="form-control" formControlName="password">
+                    <span class="input-group-append"  style="cursor: pointer;">
+                      <i class="fa fa-eye input-group-text" *ngIf="!passwordhide" aria-hidden="true" (click)="passwordhide=true;changePassworFieldType()">
+                    </i>
+                    <i class="fa fa-eye-slash input-group-text" *ngIf="passwordhide" aria-hidden="true" (click)="passwordhide=false;changePassworFieldType()">
+                      </i>
+                  </span>
+                 </div>
+                 <div class="alert alert-danger"*ngIf="login.get('password').touched&&login.get('password').errors?.required">password Field Cant;t be  Empty</div>
+                 <div class="alert alert-danger" *ngIf="login.get('password').touched&&login.get('password').errors?.minlength">password Should  Not Less then 6 character</div>
+                   
+                  </div>
+                  <div class="alert alert-danger" *ngIf="this.formAttempted&&!this.lstatus.logsataus">invalid Email or Password</div>
+                  <div class="form-group">
+                      <input type="submit" value="login" [disabled]="login.invalid" class="btn btn-primary btn-block">
+                      <a class="btn btn-success btn-block" routerLink="/register">register</a>
+                  </div>
+                   
+                  </form>
+          </div>
+          <div class="card-footer">
+            <div class="card-link"><a href="#">forgot password</a></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-md-3">
+    </div>
+  </div> 
+</div>

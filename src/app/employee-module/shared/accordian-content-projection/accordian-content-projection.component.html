@@ -1,0 +1,15 @@
+<div class="accordian" >
+  
+  <div class="card-heading"(click)="isHidden=!isHidden;symbolChange($event)">
+      <h3 class="card-title bg-primary empname">{{headerName|uppercase}} <span class="fa fa-user-circle-o" style="color:#ecf0f1;float: right;margin-right:10px;" aria-hidden="true"></span>
+        <span class="expendClose">{{expSymbol}}</span>
+      </h3>
+  </div>
+  <div class="card-body" [hidden]="isHidden">
+    <ng-content select=".panel-body"></ng-content>
+  </div>
+  <div class="card-footer" [hidden]="isHidden">
+    <ng-content select=".panel-footer"></ng-content>
+  </div>
+
+</div>

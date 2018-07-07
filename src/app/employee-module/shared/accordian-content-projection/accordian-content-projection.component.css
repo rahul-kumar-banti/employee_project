@@ -1,0 +1,24 @@
+.card-heading
+{
+    cursor: pointer;
+    color:white;
+}
+.accordian
+{
+    transition: 2s;
+}
+.card-body,.card-footer
+{
+    transition: 2s;
+}
+.expendClose
+{
+    color: white;
+    float: right;
+    margin-right: 5px;
+    font-weight: bolder;
+}
+.moveoverclass
+{
+    color:red;
+}

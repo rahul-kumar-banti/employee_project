@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="card card-primary" *ngIf="emp">
+    <app-accordian-content-projection [headerName]="emp.name">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-3">
+            <img class="img img-thumbnail userimage" [src]="emp.photoPath" [alt]="emp.name">
+          </div>
+
+
+          <div class="col-sm-9">
+            <div class="row">
+              <div class="col-sm-3" >
+                <div class="badge  badge-light diplabel">Id:</div>
+                <div class="badge  badge-light diplabel">name:</div>
+                <div class="badge  badge-light diplabel">gender:</div>
+                <div class="badge  badge-light diplabel">email:</div>
+                <div class="badge  badge-light diplabel">phone number:</div>
+                <div class="badge  badge-light diplabel">contact prefrance:</div>
+                <div class="badge  badge-light diplabel">department:</div>
+                <div class="badge  badge-light diplabel">date of birth:</div>
+                <div class="badge  badge-light diplabel">active</div>
+              </div>
+              <div class="col-sm-9">
+                <div class="badge  badge-light diplabel">{{emp.id}}</div>
+                <div class="badge  badge-light diplabel">{{emp.name}}</div>
+                <div class="badge  badge-light diplabel">{{emp.gender}}</div>
+                <div class="badge  badge-light diplabel">{{emp.email}}</div>
+                <div class="badge  badge-light diplabel">{{emp.phoneNumber}}</div>
+                <div class="badge  badge-light diplabel">{{emp.contactPrefrence}}</div>
+                <div class="badge  badge-light diplabel">{{department[emp.daepartment-1]}}</div>
+                <div class="badge  badge-light diplabel">{{emp.dateOfBirth|date}}</div>
+                <div class="badge  badge-light diplabel">{{emp.inActive}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer" *ngIf="footerShow">
+        <a routerLink="/listemployee" class="btn btn-primary list-button" queryParamsHandling="preserve">go to list</a>
+        <button class="btn  btn-primary float-right next-button" (click)="routeToNext()">next</button>
+
+      </div>
+    </app-accordian-content-projection>
+    
+  </div>
+</div>

@@ -1,0 +1,36 @@
+.login
+{
+    background-image:url("/assets/image/loginBackGround.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    margin-top: 50px;
+    padding:50px 40px;
+
+    box-shadow: 0 0px 10px 0px gray,0 5px 5px 0px rgba(158, 108, 108, 0.5);
+}
+input.ng-invalid.ng-touched
+{
+    border:2px solid red;
+}
+.card{
+    background-color:rgba(221, 211, 211, 0.3);
+    box-shadow: 0 0px 10px 0px gray,0 5px 5px 0px rgba(158, 108, 108, 0.5);
+    
+}
+.card-login-icon
+{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    border-radius: 50%;
+    left:38%;
+    top:-50px;
+}
+.image-thumbnail
+{
+    height: 100px;
+    width: 100px;
+    opacity: 0.5;
+}

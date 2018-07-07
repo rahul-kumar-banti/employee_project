@@ -1,0 +1,39 @@
+[{
+       "id":1,
+         "name":"rahul",
+         "gender":"male",
+         "email":"rahulbanti36@gmail.com",
+         "phoneNumber":7545995484,
+         "contactPrefrence":"home",
+         "dateOfBirth":"6/5/1995",
+         "daepartment":1,
+         "inActive":true,
+         "photoPath":"../../assets/image/r.jpg"
+     
+     },
+     {
+       "id":2,
+         "name":"vikas",
+         "gender":"male",
+         "email":"vikas@gmail.com",
+         "phoneNumber":465656564464,
+         "contactPrefrence":"home",
+         "dateOfBirth":"7/3/1997",
+         "daepartment":2,
+         "inActive":true,
+         "photoPath":"../../assets/image/s.jpg"
+     
+     },
+     {
+       "id":3,
+         "name":"faisal",
+         "gender":"male",
+         "email":"faisalali@gmail.com",
+         "phoneNumber":9485566223,
+         "contactPrefrence":"home",
+         "dateOfBirth":"23/5/2017",
+         "daepartment":1,
+         "inActive":true,
+         "photoPath":"../../assets/image/f.jpg"
+     
+     }]

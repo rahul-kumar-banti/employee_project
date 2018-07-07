@@ -1,0 +1,104 @@
+<app-accordian-content-projection [headerName]="emp.name" >
+  <!-- Button trigger modal -->
+  <div class="panel-body" >
+
+    <div class="row">
+      <div class="col-sm-3">
+        <img class="img img-thumbnail userimage" [src]="emp.photoPath" [alt]="emp.name">
+      </div>
+
+
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="badge  badge-light diplabel">Id:</div>
+            <div class="badge  badge-light diplabel">name:</div>
+            <div class="badge  badge-light diplabel">gender:</div>
+            <div class="badge  badge-light diplabel">email:</div>
+            <div class="badge  badge-light diplabel">phone number:</div>
+            <div class="badge  badge-light diplabel">contact prefrance:</div>
+            <div class="badge  badge-light diplabel">department</div>
+            <div class="badge  badge-light diplabel">date of birth:</div>
+            <div class="badge  badge-light diplabel">active</div>
+          </div>
+          <div class="col-sm-9">
+            <div class="badge  badge-light diplabel">{{emp.id}}</div>
+            <div class="badge  badge-light diplabel">{{emp.name}}</div>
+            <div class="badge  badge-light diplabel">{{emp.gender}}</div>
+            <div class="badge  badge-light diplabel">{{emp.email}}</div>
+            <div class="badge  badge-light diplabel">{{emp.phoneNumber}}</div>
+            <div class="badge  badge-light diplabel">{{emp.contactPrefrence}}</div>
+            <div class="badge  badge-light diplabel">{{department[emp.daepartment-1]}}</div>
+            <div class="badge  badge-light diplabel">{{emp.dateOfBirth|date}}</div>
+            <div class="badge  badge-light diplabel">{{emp.inActive}}</div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer">
+<div class="btn-group btn-group-md">
+    <button class="btn btn-primary" data-toggle="modal"  data-target="#modelId" (click)="routeToListById(emp.id,'view')">view</button>
+    <button class="btn btn-success" data-toggle="modal" (click)="routeToEditById(emp.id,'edit')" #edit data-target="#modelId">edit</button>
+    <!-- (click)="routeToEditById(emp.id)" -->
+    <span *ngIf="confermdelete">
+      <span class="budge budge-light">are you sure?</span>
+      <button class="btn btn-danger" (click)="deleteEmp(emp.id)">yes</button>
+      <button class="btn btn-success" (click)="confermdelete=false">no</button>
+    </span>
+    <button *ngIf="!confermdelete" (click)="confermdelete=true" class="btn btn-danger">delete</button>
+  </div>
+  </div>
+</app-accordian-content-projection>
+<!-- <div class="card-heading">
+  <h3 class="card-title bg-primary empname">{{emp.name|uppercase}}</h3>
+</div>
+<div class="card-body">
+  <div class="row">
+    <div class="col-sm-3">
+      <img class="img img-thumbnail userimage" [src]="emp.photoPath" [alt]="emp.name">
+    </div>
+
+
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="badge  badge-light diplabel">Id:</div>
+          <div class="badge  badge-light diplabel">name:</div>
+          <div class="badge  badge-light diplabel">gender:</div>
+          <div class="badge  badge-light diplabel">email:</div>
+          <div class="badge  badge-light diplabel">phone number:</div>
+          <div class="badge  badge-light diplabel">contact prefrance:</div>
+          <div class="badge  badge-light diplabel">department</div>
+          <div class="badge  badge-light diplabel">date of birth:</div>
+          <div class="badge  badge-light diplabel">active</div>
+        </div>
+        <div class="col-sm-9">
+          <div class="badge  badge-light diplabel">{{emp.id}}</div>
+          <div class="badge  badge-light diplabel">{{emp.name}}</div>
+          <div class="badge  badge-light diplabel">{{emp.gender}}</div>
+          <div class="badge  badge-light diplabel">{{emp.email}}</div>
+          <div class="badge  badge-light diplabel">{{emp.phoneNumber}}</div>
+          <div class="badge  badge-light diplabel">{{emp.contactPrefrence}}</div>
+          <div class="badge  badge-light diplabel">{{department[emp.daepartment-1]}}</div>
+          <div class="badge  badge-light diplabel">{{emp.dateOfBirth|date}}</div>
+          <div class="badge  badge-light diplabel">{{emp.inActive}}</div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<div class="card-footer">
+  <button class="btn btn-primary" (click)="routeToListById(emp.id)">view</button>
+  <button class="btn btn-success" (click)="routeToEditById(emp.id)">edit</button>
+  <span *ngIf="confermdelete">
+    <span class="budge budge-light">are you sure?</span>
+    <button class="btn btn-danger" (click)="deleteEmp(emp.id)">yes</button>
+    <button class="btn btn-danger" (click)="confermdelete=false">no</button>
+  </span>
+  <button *ngIf="!confermdelete" (click)="confermdelete=true" class="btn btn-danger">delete</button>
+</div> -->

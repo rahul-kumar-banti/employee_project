@@ -1,0 +1,69 @@
+.diplabel
+{
+    display: block;
+    text-align: left;
+    
+}
+.userimage
+{
+    height:200px;
+}
+.card-body
+{
+    font-size: 20px;
+}
+.card-title
+{
+ cursor: pointer;
+    color: white;
+    padding-left: 10px;
+}
+.empDatashow{
+position: fixed;
+height: 100%;
+width:100%;
+background-color:rgba(0,0,0,0.4);
+opacity:1;
+z-index: 222;
+top:0px;
+}
+.card{
+    box-shadow:0 10px 10px 0px gray;
+    margin-bottom: 5px;
+}
+.empDatamain{
+margin-top:5%;
+margin-left: 5%;
+border: 4px inset blue;
+height: 70%;
+width:90%;
+background-color: white;
+z-index: 223;
+}
+.close
+{
+color:darkred;
+font-size: 30px;
+border: 2px inset blue;
+}
+.searchinput
+{
+max-width: 50%;
+padding-bottom: 5px;
+}
+input[type=search]{
+    background-image: url("/assets/image/search1.png");
+    background-size:auto 90%;
+    background-position-x:102%;
+    background-repeat: no-repeat;
+    border:5px inset lightskyblue;
+    box-shadow: 0px 5px 5px gray;
+}
+input[type=search]:hover
+{
+    box-shadow: 0px 0px 5px gray;
+}
+.fade
+{
+    display: none;
+}

@@ -1,0 +1,84 @@
+label
+{
+    font-size:15px;
+    text-transform: capitalize;
+    font-style: normal;
+    font-weight: bolder;
+}
+.radioButton{
+    border: 3px solid black;
+    background-color: firebrick;
+    margin: 5px;
+}
+.form
+{
+    line-height:5px;
+    background:transparent;
+    padding:10px;
+    text-shadow: 2px 2px 5px lightgray;
+    margin-top: 5px;
+    box-shadow: 2px 3px 5px gray;
+
+    }
+.formcover
+{
+    box-sizing: border-box;
+    box-shadow: 3px px 5px gray;
+    background:transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-bottom: 20px;
+    
+}
+.errormessage
+{
+    font-size:13px !important;
+    background: transparent !important;
+    color: red !important;
+    border:none !important;
+   text-overflow: ellipsis;
+
+}
+.form-control.ng-touched.ng-invalid
+{
+border-bottom: 2px solid red;
+
+}
+.form-control.ng-touched.ng-valid{
+    border-bottom: 2px solid green;
+    background-color:#FAFFBD;
+}
+.form-control:focus{
+    border-top: 0px solid white;
+    border-left: 0px solid white;
+    border-right: 0px solid white;
+    border-bottom: 2px solid yellow;
+    outline:0.5px solid yellow;
+    box-shadow: 0px 0px 0px gray;
+}
+.form-control
+{
+    border-top: 0px solid white;
+    border-left: 0px solid white;
+    border-right: 0px solid white;
+    border-bottom: 2px solid blue;
+    background-color: transparent;
+    outline: none;
+    color: black !important;
+}
+.pull-center
+{
+    text-align: center;
+    color: white;
+    padding-bottom: 10px;
+}
+.float-right{
+    float: right;
+    margin-right: 5px;
+    max-width:100px;
+}
+.createForm
+{
+    background: transparent;
+    /* background:rgba(212, 205, 207, 0.541); */
+}

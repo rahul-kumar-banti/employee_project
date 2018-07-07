@@ -1,0 +1,18 @@
+.pageBody{
+    background-image: url("../../assets/image/pagebg.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+
+}
+.welcometext{
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: blueviolet;
+    text-shadow: 2px  2px 5px gray;
+}
+.npanel{
+    color: white !important;
+}
