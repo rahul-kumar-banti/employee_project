@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SignInComponent } from '../sign-in/sign-in.component';
 import { RegisterComponent } from '../register/register.component';
-import { SharedModuleModule } from '../../employee-module/shared/shared-module/shared-module.module';
+import { SharedModuleModule } from '../../app-shared/shared-module.module';
 const authRoute:Routes=[
   {path:'login',component:SignInComponent},
   {path:'register',component:RegisterComponent}

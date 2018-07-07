@@ -1,8 +1,8 @@
-import { DataSharingService } from './../../shared/services/data-sharing.service';
 import { Employee } from './../employee.model';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Component, OnInit, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { EmployeDataService } from '../../../employe-data.service';
+import { DataSharingService } from '../../shared/data-sharing-service/data-sharing.service';
 
 
 @Component({
@@ -32,7 +32,6 @@ export class EmployeeInfoComponent implements OnInit {
     this._route.paramMap.subscribe((p: ParamMap) => {
       this._id = parseInt(p.get("id"));
       this.updateEmployeeData(this._id);
-      console.log(this._id)
        })
     // this.emp=this._empdataservice.employedetailone(this._id);
     //console.log(this._id);

@@ -1,8 +1,9 @@
-import { Employee } from './../employees/employee.model';
 import { Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { EmployeDataService } from '../../employe-data.service';
+import { Employee } from '../../../../employees/employee.model';
+import { EmployeDataService } from '../../../../../employe-data.service';
+
 
 @Injectable()
 export class ResolveemployeeAloneService implements Resolve<Employee> {

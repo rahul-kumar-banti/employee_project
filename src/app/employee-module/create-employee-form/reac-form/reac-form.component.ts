@@ -1,10 +1,9 @@
-import { DataSharingService } from './../../shared/services/data-sharing.service';
 import { Employee } from './../../employees/employee.model';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { EmpCreateService } from './../../shared/emp-create.service';
 import { Component, OnInit, Output, EventEmitter, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validator, Validators } from '@angular/forms';
 import { EmployeDataService } from '../../../employe-data.service';
+import { DataSharingService } from '../../shared/data-sharing-service/data-sharing.service';
 
 
 @Component({

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CreatePasswordMatchingDirective } from './shared/shared-module/password-matching-service/create-password-matching.directive';
-import { SharedModuleModule } from './shared/shared-module/shared-module.module';
 import { CommonModule } from '@angular/common';
+import { SharedModuleModule } from '../app-shared/shared-module.module';
 @NgModule({
     declarations:[
         CreatePasswordMatchingDirective,

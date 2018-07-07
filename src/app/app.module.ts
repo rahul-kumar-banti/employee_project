@@ -19,17 +19,16 @@ import { CreateEmployeeFormComponent } from './employee-module/create-employee-f
 import { ReacFormComponent } from './employee-module/create-employee-form/reac-form/reac-form.component';
 import { CustomValidatorDirective } from './custom-validator.directive';
 import { CreateFormGuardService } from "./create-form-guard.service";
-import { EmployeeFilterPipe } from './employee-module/employee/employee-filter.pipe';
-import { ResolveEmployeeGardService } from './employee-module/shared/resolve-employee-gard.service';
 import { PageNotFoundComponent } from './employee-module/page-not-found/page-not-found.component';
-import { ResolveemployeeAloneService } from './employee-module/shared/resolveemployee-alone.service';
 import { EmployeeSingleListComponent } from './/employee-module/employees/employee-single-list/employee-single-list.component';
 import { AccordianContentProjectionComponent } from './employee-module/shared/accordian-content-projection/accordian-content-projection.component';
-import { MouseoverDirective } from './employee-module/shared/mouseover.directive';
 import { DataSharingService } from './employee-module/shared/data-sharing-service/data-sharing.service';
 import { ModelContentProjectionComponent } from './employee-module/shared/model-content-projection/model-content-projection.component';
-import { SharedModuleModule } from './employee-module/shared/shared-module/shared-module.module';
 import { AuthRouteModule } from './auth/auth-route/auth-route.module';
+import { EmpHomeComponent } from './employee-module/emp-home/emp-home.component';
+import { SharedModuleModule } from './app-shared/shared-module.module';
+import { ResolveemployeeAloneService } from './employee-module/shared/shared-module/resolver/resolve-single-employee/resolveemployee-alone.service';
+import { ResolveEmployeeGardService } from './employee-module/shared/shared-module/resolver/resolve-employee/resolve-employee-gard.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,12 +40,11 @@ import { AuthRouteModule } from './auth/auth-route/auth-route.module';
     CreateEmployeeFormComponent,
     ReacFormComponent,
     CustomValidatorDirective,
-    EmployeeFilterPipe,
     PageNotFoundComponent,
     EmployeeSingleListComponent,
     AccordianContentProjectionComponent,
-    MouseoverDirective,
     ModelContentProjectionComponent,
+    EmpHomeComponent,
    
   ],
   imports: [
@@ -62,7 +60,7 @@ import { AuthRouteModule } from './auth/auth-route/auth-route.module';
     ListpageNavigationGuardService,
     ResolveemployeeAloneService,
     DataSharingService,AuthService,
-    PageAuthenticationGuardService
+  PageAuthenticationGuardService
   ],
   bootstrap: [AppComponent]
 })

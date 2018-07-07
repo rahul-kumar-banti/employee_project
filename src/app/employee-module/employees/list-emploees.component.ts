@@ -1,9 +1,10 @@
-import { DataSharingService } from './../shared/services/data-sharing.service';
+
 import { Routes, Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Employee } from './employee.model';
 import { Component, OnInit } from '@angular/core';
 import * as $ from "jquery";
 import { EmployeDataService } from '../../employe-data.service';
+import { DataSharingService } from '../shared/data-sharing-service/data-sharing.service';
 @Component({
   selector: 'app-list-emploees',
   templateUrl: './list-emploees.component.html',
