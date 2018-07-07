@@ -57,7 +57,7 @@ export class EmployeeInfoComponent implements OnInit {
       this._id = 1;
 
     }
-    this._router.navigate(['list/' + this._id],{
+    this._router.navigate(['emp/list/' + this._id],{
       queryParamsHandling:"preserve"
     });
   }

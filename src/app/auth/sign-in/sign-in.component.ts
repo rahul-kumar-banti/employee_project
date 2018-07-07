@@ -1,8 +1,9 @@
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute} from '@angular/router';
 import { AuthService } from './../auth.service';
 import { FormGroup, FormControl, Validator, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Loginstatus } from '../auth-model';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-sign-in',
@@ -17,7 +18,9 @@ comesFrom:string="/home";
 optionalUrlArray:string;
 login:FormGroup;
 lstatus:Loginstatus;
-  constructor(private  _authService:AuthService,private _router:Router,private actRoute:ActivatedRoute) {
+  constructor(private  _authService:AuthService,
+    private _router:Router,private actRoute:ActivatedRoute,private  _location:Location
+) {
     this.lstatus=this._authService.currentLoginStatus;
 
     
@@ -28,14 +31,7 @@ lstatus:Loginstatus;
       'email':new FormControl("",[Validators.required,Validators.email]),
       'password':new FormControl("",[Validators.required,Validators.minLength(6)])
     })
-    this.actRoute.queryParamMap.subscribe(data=>{
-  this.optionalUrlArray=data.get("lastUrl");
-  if(this.optionalUrlArray){
-  this.optionalUrlArray=this.optionalUrlArray.split('?')[0].toString();
-  this.comesFrom=this.optionalUrlArray.replace(',','/')
-  //console.log(this.comesFrom)
-  }
-    }) 
+    
     
   }
   changePassworFieldType(){
@@ -52,7 +48,7 @@ else{
     this.lstatus= this._authService.userLogin(email,password);
     this.formAttempted=true;
     if(this.lstatus.logsataus){
-     this._router.navigate([this.comesFrom]);
+    this._location.back();
    }
     
   

@@ -26,7 +26,7 @@ ngOnChanges(changes:SimpleChanges){
   //console.log(this.emp)
 }
 routeToListById(__id: number,buttonname:String) {
-  this.route.navigate(['list/' + __id],{
+  this.route.navigate(['emp/list/' + __id],{
     queryParams:{'search':this.searchString}
     
   })

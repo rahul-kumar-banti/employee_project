@@ -71,7 +71,7 @@ export class ReacFormComponent implements OnInit{
         this._empdataservice.updateEmployeeByid(this.createEmployee.value.id, this.createEmployee.value)
       }
 
-      this._route.navigate(['listemployee'])
+      this._route.navigate(['emp/listemployee'])
     }
   }
   //change  view  image change  on    form photot path  change

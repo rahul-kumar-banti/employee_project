@@ -1,3 +1,4 @@
+import { employeeModule } from './employee-module/employee-module';
 import { PageAuthenticationGuardService } from './employee-module/shared/page-authentication-service/page-authentication-guard.service';
 import { AuthService } from './auth/auth.service';
 import { appRouteModule } from './app-route-module';
@@ -51,7 +52,8 @@ import { ResolveEmployeeGardService } from './employee-module/shared/shared-modu
     BrowserModule,
     SharedModuleModule,
     appRouteModule,
-    AuthRouteModule
+    AuthRouteModule,
+    employeeModule
   ],
   providers: [
     EmployeDataService,
