@@ -32,11 +32,16 @@ label
 }
 .errormessage
 {
+    /* position: absolute !important;
     font-size:13px !important;
     background: transparent !important;
     color: red !important;
     border:none !important;
    text-overflow: ellipsis;
+   top:-0.5px;
+   z-index: 5; */
+   position: absolute !important;
+    z-index: 5 !important;
 
 }
 .form-control.ng-touched.ng-invalid
